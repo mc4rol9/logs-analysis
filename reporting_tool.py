@@ -23,7 +23,7 @@ def db_execute(query):
 
 def question_one():
     """Pass query to execution. Print out the result to question 1."""
-    query = ("select * from top_articles limit 3")
+    query = ("SELECT * FROM top_articles limit 3")
     answer = db_execute(query)
     print("\n QUESTION 1: What are the most popular "\
           "three articles of all time?\n")
@@ -51,8 +51,10 @@ def question_two():
 
 def question_three():
     """Pass query to execution. Print out the result to question 3."""
-    query = ("select * from log_percentage "
-             "where percentage > 1.0 order by days")
+    query = ("""SELECT * 
+                FROM log_percentage
+                WHERE percentage > 1.0 
+                ORDER BY days""")
     answer = db_execute(query)
     print("\n QUESTION 3: On which days did more than 1%"\
           "of requests lead to errors?\n")
