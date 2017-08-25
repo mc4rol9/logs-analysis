@@ -3,29 +3,36 @@ This is an internal reporting tool that uses information from the database to di
 
 The given database contains newspaper articles, as well as the web server log for the site. 
 
-This program was built in Python 3 and PostgreSQL and it runs from command line.
-There is no user's input. The program connects to the database, uses SQL queries to analyze the log data, and print out the answers to some questions.
+This program was built in Python and PostgreSQL and it runs from command line.
+There is no user's input. The program connects to the database, uses SQL queries to analyze the log data, and print out the answers to questions:
+
+1. What are the most popular three articles of all time? 
+2. Who are the most popular article authors of all time?
+3. On which days did more than 1% of requests lead to errors?
 
 **_This is a project submission for Udacity Full Stack Web Developer Nanodegree Program._**
 
 ## Requirements
 In order to run and make changes to this project, you'll need:
-- [Python 3](https://www.python.org/)
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/)
-- [Udacity Vagrant config file](https://github.com/udacity/fullstack-nanodegree-vm/blob/master/vagrant/Vagrantfile)
-- The newsdata.sql file from Udacity
+- [Python 2.7](https://www.python.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+Projects files and Modules: 
+- Download the data sample for this project 
+  - [newsdata.sql file from Udacity](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+- Download or clone this project repository
+- Install the *psycopg2* module: `pip install psycopg2`
 
 ## Usage
-To run this project locally:
+Make sure to save the data sample file *newsdata.sql* inside project directory.
 
-1. Download or clone this repository
-2. Save the project folder inside Vagrant folder
-3. Up and log into Vagrant VM
-4. Load the *newsdata.sql* data into the local *news* database: `psql -d news`
-5. Connect to the database: `psql -d news`
-6. Create the VIEWS into the database - use the file *sql_views* as a guide
-7. Run the program: `python3 reporting_tool.py`
+**Build the database**
+1. Load the data to a local *news* database: `psql -d news -f newsdata.sql`
+5. Connect to the local database: `psql -d news`
+6. Create the VIEWS into the database:'`psql -d news -f sql_views.sql`
+
+**Run the program**
+`python reporting_tool.py`
 
 ## Files
 Understanding the files:
@@ -33,11 +40,11 @@ Understanding the files:
 __*pep8_test.jpg*__
 The PEP8 style recommendations test.
 
-__*results.jpg*__
-The program results screen.
-
 __*reporting_tool.py*__
 The program.
 
-__*sql_views.txt*__
-The views guide.
+__*results.jpg*__
+The program results screen.
+
+__*sql_views.sql*__
+The file to create the VIEWS.
