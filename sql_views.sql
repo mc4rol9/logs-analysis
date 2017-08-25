@@ -1,7 +1,6 @@
 -- THE SQL VIEWS --
 
--- View for question 1 --
-
+-- View for question 1 and 2--
 CREATE VIEW top_articles AS
   SELECT title, 
   COUNT(log.id) AS pageviews
@@ -10,17 +9,13 @@ CREATE VIEW top_articles AS
   GROUP BY articles.title 
   ORDER BY pageviews desc;
 
-
 -- View for question 2 --
-
 CREATE VIEW top_authors AS
   SELECT title, name
   FROM articles, authors
     WHERE articles.author = authors.id;
 
-
 -- Views for question 3 --
-
 CREATE VIEW log_total AS
   SELECT date(time) as days, 
   CAST(count(status) AS FLOAT) AS status
