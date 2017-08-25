@@ -18,7 +18,7 @@ def db_execute(query):
         db.close()
         return answer
     except:
-        print("\nSorry, unable to connect to the database: " + DBNAME)
+        print("<error message>")
 
 
 def question_one():
