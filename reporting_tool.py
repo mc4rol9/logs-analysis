@@ -35,9 +35,11 @@ def question_one():
 
 def question_two():
     """Pass query to execution. Print out the result to question 2."""
-    query = ("select name, sum(top_articles.pageviews) as views "
-             "from top_authors, top_articles group by name "
-             "order by views desc")
+    query = ("""SELECT name, SUM(top_articles.pageviews) AS views
+                FROM top_authors, top_articles 
+                WHERE top_authors.title = top_articles.title
+                GROUP BY name
+                ORDER BY views desc""")
     answer = db_execute(query)
     print("\n QUESTION 2: Who are the most popular "\
           "article authors of all time?\n")
