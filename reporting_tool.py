@@ -29,10 +29,8 @@ def question_one():
           "three articles of all time?\n")
     print(" ANSWER:")
     print("\n  -- THE TOP 3 Popular Articles --\n")
-    count = 1
-    for a in answer:
-        print(" ", count, a[0], " with", a[1], "views\n")
-        count = count + 1
+    for count, (title, views) in enumerate(answer, 1):
+        print(' {}. \"{}\" with {} views\n'.format(count, title, views))
 
 
 def question_two():
@@ -45,10 +43,8 @@ def question_two():
           "article authors of all time?\n")
     print(" ANSWER:")
     print("\n  -- MOST Popular Authors --\n")
-    count = 1
-    for a in answer:
-        print(" ", count, a[0], " with", a[1], "views\n")
-        count = count + 1
+    for count, (name, views) in enumerate(answer, 1):
+        print(' {}. \"{}\" with {} views\n'.format(count, name, views))
 
 
 def question_three():
@@ -60,11 +56,9 @@ def question_three():
           "of requests lead to errors?\n")
     print(" ANSWER:")
     print("\n  -- DAYS/ERRORS LIST --\n")
-    count = 1
-    for a in answer:
-        print(" ", count, a[0], "with a percentage of", ("%.2f" % a[1]),\
-              "errors\n")
-        count = count + 1
+    for count, (day, error) in enumerate(answer, 1):
+        print(' {}. \"{}\" with a percentage of \"{:.2f}\" errors'.format(
+              count, day, error))
 
 
 if __name__ == '__main__':
