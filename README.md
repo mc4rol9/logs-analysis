@@ -28,8 +28,8 @@ Make sure to save the data sample file *newsdata.sql* inside project directory.
 
 **Build the database**
 1. Load the data to a local *news* database: `psql -d news -f newsdata.sql`
-5. Connect to the local database: `psql -d news`
-6. Create the VIEWS into the database:'`psql -d news -f sql_views.sql`
+2. Create the VIEWS into the database:'`psql -d news -f sql_views.sql`
+3. Connect to the local database: `psql -d news`
 
 **Run the program**
 `python3 reporting_tool.py`
