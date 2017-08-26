@@ -17,8 +17,9 @@ def db_execute(query):
         answer = c.fetchall()
         db.close()
         return answer
-    except:
-        print("<error message>")
+    except Exception as e:
+        print(e)
+        exit(1)
 
 
 def question_one():
