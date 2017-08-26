@@ -25,7 +25,7 @@ def question_one():
     """Pass query to execution. Print out the result to question 1."""
     query = ("SELECT * FROM top_articles limit 3")
     answer = db_execute(query)
-    print("\n QUESTION 1: What are the most popular "\
+    print("\n QUESTION 1: What are the most popular "
           "three articles of all time?\n")
     print(" ANSWER:")
     print("\n  -- THE TOP 3 Popular Articles --\n")
@@ -36,12 +36,12 @@ def question_one():
 def question_two():
     """Pass query to execution. Print out the result to question 2."""
     query = ("""SELECT name, SUM(top_articles.pageviews) AS views
-                FROM top_authors, top_articles 
+                FROM top_authors, top_articles
                 WHERE top_authors.title = top_articles.title
                 GROUP BY name
                 ORDER BY views desc""")
     answer = db_execute(query)
-    print("\n QUESTION 2: Who are the most popular "\
+    print("\n QUESTION 2: Who are the most popular "
           "article authors of all time?\n")
     print(" ANSWER:")
     print("\n  -- MOST Popular Authors --\n")
@@ -51,12 +51,12 @@ def question_two():
 
 def question_three():
     """Pass query to execution. Print out the result to question 3."""
-    query = ("""SELECT * 
+    query = ("""SELECT *
                 FROM log_percentage
-                WHERE percentage > 1.0 
+                WHERE percentage > 1.0
                 ORDER BY days""")
     answer = db_execute(query)
-    print("\n QUESTION 3: On which days did more than 1%"\
+    print("\n QUESTION 3: On which days did more than 1%"
           "of requests lead to errors?\n")
     print(" ANSWER:")
     print("\n  -- DAYS/ERRORS LIST --\n")
