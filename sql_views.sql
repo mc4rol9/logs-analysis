@@ -33,7 +33,7 @@ CREATE VIEW log_errors AS
 
 CREATE VIEW log_percentage AS
   SELECT log_errors.days, 
-  CAST((log_errors.errors*100)/log_total.status AS FLOAT) AS percentage
+  (log_errors.errors*100)/log_total.status AS percentage
   FROM log_errors, log_total
     WHERE log_errors.days = log_total.days
   ORDER BY log_errors.days;
